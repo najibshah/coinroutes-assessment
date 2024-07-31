@@ -49,9 +49,9 @@ export function Home() {
         )}
       </p>
       <p>
-        Click on "Assessment" in the navigation bar on top to view the
+        Click on "Dashboard" in the navigation bar on top to view the
         application{" "}
-        <Button variant="contained" sx={{ ml: "20px" }}>
+        <Button variant="contained" sx={{ ml: "20px" }} href="/dashboard">
           Or Click Here
         </Button>
       </p>

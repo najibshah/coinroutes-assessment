@@ -1,11 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ResponsiveAppBar } from "./layout";
-import { Home } from "./home";
+import { routes } from "./routesAndMenutItems";
 
 function App() {
   return (
     <>
-      <ResponsiveAppBar />
-      <Home />
+      <BrowserRouter>
+        <ResponsiveAppBar />
+        <Routes>
+          {routes.map((item, index) => {
+            return (
+              <Route key={index} path={item.path} element={item.element} />
+            );
+          })}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

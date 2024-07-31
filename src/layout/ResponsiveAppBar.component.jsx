@@ -12,18 +12,20 @@ import {
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
-
-const pages = ["Home", "Assessment"];
+import { useNavigate } from "react-router-dom";
+import { menuItems } from "../routesAndMenutItems";
 
 export function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
+  const history = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (link) => {
     setAnchorElNav(null);
+    history(`${link}`);
   };
 
   return (
@@ -59,22 +61,26 @@ export function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {menuItems.map((page) => (
+                <MenuItem
+                  key={page.title}
+                  onClick={() => handleCloseNavMenu(page.link)}
+                >
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {menuItems.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                href={page.link}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
