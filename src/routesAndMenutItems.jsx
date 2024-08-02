@@ -1,4 +1,5 @@
 import { Home } from "./home";
+import { Dashboard } from "./dashboard";
 
 export const routes = [
   {
@@ -7,7 +8,7 @@ export const routes = [
   },
   {
     path: "/dashboard",
-    element: <Home />,
+    element: <Dashboard />,
   },
 ];
 
