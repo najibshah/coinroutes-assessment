@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ResponsiveAppBar } from "./layout";
 import { routes } from "./routesAndMenutItems";
+import { CssBaseline } from "@mui/material";
 
 function App() {
   return (
     <>
+      <CssBaseline />
       <BrowserRouter>
         <ResponsiveAppBar />
         <Routes>
