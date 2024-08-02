@@ -27,12 +27,25 @@ const detailsList = [
 
 export function Home() {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" pt="50px">
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      pt="50px"
+      sx={{ padding: { xs: " 0 20px", md: "0px" } }}
+    >
       <h1>CoinRoutes assessment</h1>
       <p
-        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
       >
         This assessment application is built with React and Bundled with VITE{" "}
+      </p>
+      <div>
+        {" "}
         {Object.entries(logos).map(
           ([key, { href, target, source, altText, style }]) => {
             return (
@@ -47,7 +60,7 @@ export function Home() {
             );
           }
         )}
-      </p>
+      </div>
       <p>
         Click on "Dashboard" in the navigation bar on top to view the
         application{" "}
